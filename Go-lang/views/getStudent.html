@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      body {
+        background-image: url('https://img.freepik.com/free-photo/yellow-dchool-desk-is-full-beautiful-stationery-lying-creative-way_197531-10741.jpg?w=2000');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+      }
+  
+      </style>
+</head>
+<body>
+    <h1><u>{{.Title}}</u></h1>
+    <a href="/"><button> Home</button></a>
+    <br>
+    <br>
+
+    <table border="1">
+        <tr>
+          <td>ID</td>
+          <td>StudentName</td>
+          <td>FatherName</td>
+          <td>Class</td>
+          <td>Age</td>
+          <td>Update</td>
+          <td>Delete</td>
+        </tr>
+        
+    {{with $a := .data}}
+    <div>
+        {{range $item := .}}
+        <tr>
+          <td>{{index $item 0}}</td>
+          <td> {{ index $item 1 }} </td>
+          <td>{{ index $item 2 }} </td>
+          <td>{{ index $item 3}}</td>
+          <td>{{ index $item 4 }} </td>
+          <td ><div style="font-size:30px;"><a href="updateStudent?uid={{index $item 0}}"><span style="padding-left:0px;">update</span></a> </div></td>
+          <td><div style="font-size:30px;"><a href="deleteStudent?uid={{index $item 0}}"><span style="padding-left:0px;">delete</span></a> </div></td>
+        </tr>
+      {{ end }}
+    </div>
+    {{end}}
+      </table>
+</body>
+</html>
