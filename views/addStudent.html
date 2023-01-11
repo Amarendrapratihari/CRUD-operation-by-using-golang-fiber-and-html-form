@@ -1,0 +1,67 @@
+<html>
+  <head>
+    <style>
+      body {
+        background-image: url("https://www.brightgauge.com/hubfs/Software%20Integrations.png");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+      }
+    </style>
+    <title>registration form</title>
+  </head>
+
+  <h2><u>Student Information</u></h2>
+  <a href="/"><button>Home</button></a>
+
+  <form action="studentDataAdded" method="Post">
+    <table border="0">
+      <tbody>
+        <tr>
+          <td><label for="studentName">Student Name: </label></td>
+          <td>
+            <input
+              id="studentName"
+              maxlength="50"
+              name="studentName"
+              type="text"
+            />
+          </td>
+        </tr>
+
+        <tr>
+          <td><label for="fatherName">Father Name: </label></td>
+          <td>
+            <input
+              id="fatherName"
+              maxlength="50"
+              name="fatherName"
+              type="text"
+            />
+          </td>
+        </tr>
+
+        <tr>
+          <td><label for="class">Class: </label></td>
+          <td><input id="class" maxlength="50" name="class" type="text" /></td>
+        </tr>
+
+        <tr>
+          <td><label for="age">Age: </label></td>
+          <td><input id="age" maxlength="50" name="age" type="text" /></td>
+        </tr>
+
+        <div>
+          <td>
+            <button name="Submit" type="Submit" onclick="myFunction()">Add</button>
+          </td>
+          <script>
+            function myFunction(){
+              alert("Data added sucessfully");
+            }
+          </script>
+        </div>
+      </tbody>
+    </table>
+  </form>
+</html>
